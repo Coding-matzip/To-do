@@ -1,0 +1,58 @@
+section {
+  text-align: center;
+  margin: 20%;
+  display: flex;
+  justify-content: center;
+}
+section > #main-content {
+  position: relative;
+}
+section > #main-content > #content-name {
+  color: #5f2eea;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 34px;
+  letter-spacing: 1px;
+}
+input {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 326px;
+  height: 64px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+button {
+  margin: 3% 1%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: 65px;
+  color: #5f2eea;
+  border-color: #5f2eea;
+}
+button:active {
+  background-color: #5f2eea;
+  color: #ffffff;
+}
+button.login {
+  width: 150px;
+}
+button.signup {
+  width: 150px;
+}
+.element {
+  flex-direction: column;
+}
+.label {
+  text-align: left;
+}
+.input-area {
+  margin-top: 30px;
+}
+#button-area {
+  margin-top: 30px;
+}

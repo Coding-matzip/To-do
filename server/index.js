@@ -39,7 +39,11 @@ app.get("/", (req, res) => {
 // res.send는 클라이언트에 문자열로 응답하기 위한 함수이다.
 // 여기서 res.send("Hello World")라고 했기 때문에 화면에 Hello World가 출력된다.
 
-app.post("/api/users/register", (req, res) => {
+app.get("/api/hello", (req, res) => {
+  res.send("Hello");
+});
+
+app.post("/api/users/signup", (req, res) => {
   // 회원가입할 때 필요한 정보들을 client에서 가져오면
   // 그것들을 데이터베이스에 넣어준다.
   const user = new User(req.body);
