@@ -8,6 +8,7 @@ import TodoInsert from "../../../components/TodoInsert";
 import {
   getTodos,
 } from "../../../services/TodoService";
+import axios from "axios";
 
 function LandingPage(props) {
   const [todos, setTodos] = useState({todos:[], currentTodo:""});
@@ -21,18 +22,19 @@ function LandingPage(props) {
     
   }, []);
 
-  // const onClickHandler = () => {
-  //   axios.get("/api/users/logout").then((response) => {
-  //     if (response.data.success) {
-  //       props.history.push("/login");
-  //     } else {
-  //       alert("로그아웃 실패");
-  //     }
-  //   });
-  // };
+  const onClickHandler = () => {
+    axios.get("/api/users/logout").then((response) => {
+      if (response.data.success) {
+        props.history.push("/login");
+      } else {
+        alert("로그아웃 실패");
+      }
+    });
+  };
   
   return (
     <TodoMain>
+      <button onClick={onClickHandler} >logout </button>
       <TodoInsert/>
       <TodoList todo ={todos.todos} />
     </TodoMain>

@@ -174,8 +174,8 @@
 .openModal .modal_main .close {
   position: absolute;
   background-color: transparent;
-  top: -40px;
-  left: 93%;
+  top: -67px;
+  left: 94%;
 }
 
 @-webkit-keyframes modal-show {

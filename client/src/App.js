@@ -29,7 +29,7 @@ function App() {
         <Route
           exact
           path="/schedule"
-          component={Auth(SchedulePage, true)}
+          component={Auth(SchedulePage, null)}
         ></Route>
       </div>
       <nav>
