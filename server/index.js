@@ -3,6 +3,9 @@
 const express = require("express"); // node_modules 폴더에 있는 미리 구현한 라우팅 모듈을 가져온다.
 const app = express(); // 새로운 라우터 객체를 만든다. 이 라우터의 객체 이름을 app으로 설정한다.
 const port = 5000;
+const cors = require("cors");
+const todoRouter = require("./routes/todo_route");
+const db = require("./db");
 
 const { User } = require("./models/User");
 const bodyParser = require("body-parser");
@@ -104,6 +107,12 @@ app.get("/api/users/logout", auth, (req, res) => {
     return res.status(200).send({ success: true });
   });
 });
+
+db();
+app.use(express.json());
+app.use(cors());
+
+app.use("/api/todo", todoRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
