@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <div id="content-box">
         <Route exact path="/" component={Auth(LandingPage, null)}></Route>
-        <Route exact path="/login" component={Auth(LoginPage, false)}></Route>
+        <Route exact path="/login" component={Auth(LoginPage, null)}></Route>
         <Route exact path="/signup" component={Auth(SignupPage, false)}></Route>
         <Route
           exact
