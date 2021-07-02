@@ -1,12 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useState ,useEffect } from "react";
 import { siteTitle } from "../../Config";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import TodoMain from "./components/TodoMain";
+import TodoList from "./components/TodoList";
+import TodoInsert from "./components/TodoInsert";
+import {
+  getTodos,
+} from "./services/TodoService";
 
 function LandingPage(props) {
+  const [todos, setTodos] = useState({todos:[], currentTodo:""});
+
   useEffect(() => {
     axios.get("/api/hello").then((response) => console.log(response.data));
     document.title = siteTitle; //Title 변경.
+    return getTodos().then(function({ data }) {
+      setTodos({ todos: data });
+    });
   }, []);
 
   const onClickHandler = () => {
@@ -18,12 +29,12 @@ function LandingPage(props) {
       }
     });
   };
-
+  
   return (
-    <div>
-      <section>LandingPage</section>
-      <button onClick={onClickHandler}>Logout</button>
-    </div>
+    <TodoMain>
+      <TodoInsert/>
+      <TodoList todo ={todos.todos} />
+    </TodoMain>
   );
 }
 
