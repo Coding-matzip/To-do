@@ -81,7 +81,7 @@ function LoginPage(props) {
             <div id="button-area">
               <span>
                 <Link to="/signup">
-                  <button className="signup" type="button">
+                  <button className="login" type="button">
                     Sign Up
                   </button>
                 </Link>
