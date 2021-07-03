@@ -1,0 +1,15 @@
+.completed_title {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px 20px 70px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 1px;
+  color: #5f2eea;
+}
+
+.search-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}

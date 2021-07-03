@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import TodoMain from "../../../components/TodoMain";
 import TodoList from "../../../components/TodoList";
 import TodoInsert from "../../../components/TodoInsert";
+import TodoControl from "../../../components/TodoControl";
 import {
   getTodos,
 } from "../../../services/TodoService";
@@ -34,9 +35,10 @@ function LandingPage(props) {
   
   return (
     <TodoMain>
-      <button onClick={onClickHandler} >logout </button>
+      {/* <button onClick={onClickHandler} >logout </button> */}
       <TodoInsert/>
       <TodoList todo ={todos.todos} />
+      <TodoControl/>
     </TodoMain>
   );
 }
