@@ -4,7 +4,7 @@ import {
   updataeTodos,
   addTodos,
   getTodos,
-} from "../services/TodoService";
+} from "../../../services/TodoService";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Modal = (props) => {

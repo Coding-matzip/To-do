@@ -1,9 +1,9 @@
 import React,{useState} from "react";
 import CompletedItem from "./CompletedItem"; 
 import "./CompletedSchedule.css";
-import "./TodoMain.css";
+import "../LandingPage/TodoMain.css";
 import {FaSearch} from "react-icons/fa";
-import TodoControl from "./TodoControl";
+import TodoControl from "../LandingPage/TodoControl";
 import SearchModal from "./search";
 
 

@@ -5,6 +5,7 @@ import LandingPage from "./Component/Pages/LandingPage/LandingPage";
 import LoginPage from "./Component/Pages/MemberPage/LoginPage";
 import SignupPage from "./Component/Pages/MemberPage/SignupPage";
 import SchedulePage from "./Component/Pages/Schedule/SchedulePage";
+import NextLandingPage from "./Component/Pages/LandingPage/NextLandingPage";
 import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
@@ -26,11 +27,8 @@ function App() {
         <Route exact path="/" component={Auth(LandingPage, null)}></Route>
         <Route exact path="/login" component={Auth(LoginPage, null)}></Route>
         <Route exact path="/signup" component={Auth(SignupPage, null)}></Route>
-        <Route
-          exact
-          path="/schedule"
-          component={Auth(SchedulePage, null)}
-        ></Route>
+        <Route exact path="/schedule"component={Auth(SchedulePage, null)}></Route>
+        <Route exact path="/next" component={Auth(NextLandingPage, null)}></Route>
       </div>
       <nav>
         <ul id="menu">

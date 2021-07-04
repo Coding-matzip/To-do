@@ -2,10 +2,10 @@ import React, { useState ,useEffect } from "react";
 import { siteTitle } from "../../Config";
 // import axios from "axios";
 import { withRouter } from "react-router-dom";
-import TodoMain from "../../../components/TodoMain";
-import TodoList from "../../../components/TodoList";
-import TodoInsert from "../../../components/TodoInsert";
-import TodoControl from "../../../components/TodoControl";
+import TodoMain from "../LandingPage/TodoMain";
+import TodoList from "../LandingPage/TodoList";
+import TodoInsert from "../LandingPage/TodoInsert";
+import TodoControl from "../LandingPage/TodoControl";
 import {
   getTodos,
 } from "../../../services/TodoService";

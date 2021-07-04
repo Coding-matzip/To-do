@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import CompletedSchedule from "../../../components/CompletedSchedule";
+import CompletedSchedule from "./CompletedSchedule";
 import {getTodos} from "../../../services/TodoService";
 
 function SchedulePage() {

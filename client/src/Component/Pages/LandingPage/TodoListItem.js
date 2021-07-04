@@ -11,7 +11,7 @@ import {
   getTodos,
   updataeTodos,
   deleteTodos,
-} from "../services/TodoService";
+} from "../../../services/TodoService";
 
 const TodoListItem = ({ todoitem}) => {
   const { _id, todo, completed } = todoitem;
@@ -81,6 +81,7 @@ const handleDelete = async (currentTodo) => {
           <MdDelete />
         </div>
       </div>
+      
       <div className="situation">
         <div
           className={cn("checkbox", { completed })}

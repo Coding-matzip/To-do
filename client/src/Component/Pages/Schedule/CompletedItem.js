@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import "./TodoListItem.css";
+import "../LandingPage/TodoList.css";
 import { MdEdit } from "react-icons/md";
-import { MdCheckCircle } from "react-icons/md";
-import { MdDelete } from "react-icons/md";
-import { MdLens } from "react-icons/md";
-import { MdPanoramaFishEye } from "react-icons/md";
+import { MdCheckCircle ,MdDelete ,MdLens, MdPanoramaFishEye } from "react-icons/md";
 import cn from "classnames";
-import Modal from "./Modal";
+import Modal from "../LandingPage/Modal";
 import {
   updataeTodos,
   deleteTodos,
-} from "../services/TodoService";
+} from "../../../services/TodoService";
 
 const CompletedItem = ({todositem}) => {
     const { _id, todo, completed } = todositem;
