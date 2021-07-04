@@ -43,7 +43,7 @@ function LoginPage(props) {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-jc-c flex-ai-c height-100p">
       <section>
         <div id="main-content">
           <div id="content-name">Login</div>
@@ -78,7 +78,7 @@ function LoginPage(props) {
                 ></input>
               </div>
             </div>
-            <div id="button-area">
+            <div id="button-area" className="flex flex-ai-c flex-jc-b">
               <span>
                 <Link to="/signup">
                   <button className="login" type="button">

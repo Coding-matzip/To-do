@@ -50,7 +50,7 @@ function SignupPage(props) {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-jc-c flex-ai-c height-100p">
       <section>
         <div id="main-content">
           <div id="content-name">Sign Up</div>
