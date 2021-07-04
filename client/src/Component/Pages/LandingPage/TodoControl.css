@@ -1,0 +1,73 @@
+.controler {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controler button {
+  border: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  display: flex;
+}
+
+.prev {
+  margin-left: 13px;
+}
+
+.prev button {
+  margin-top: -11px;
+}
+
+.prev span {
+  margin-left: 10px;
+  margin-top: 12px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #a1a3af;
+  margin-right: 210px;
+}
+
+.next {
+  margin-right: 30px;
+}
+.next button {
+  margin-top: -11px;
+}
+
+.next span {
+  margin-right: 10px;
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #a1a3af;
+}
+
+.pagenum {
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.5em;
+  color: #5f2eea;
+  margin-right: 230px;
+}
+
+.controler .checked {
+  color: #5f2eea;
+}
+
+.checked > * {
+  fill: #5f2eea;
+}

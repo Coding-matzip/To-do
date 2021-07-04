@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { siteTitle } from "../../Config";
 import "./MemberPage.css";
@@ -6,8 +6,47 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import kakaoLoginButton from "../../../image/kakao_login_medium_narrow.png";
+
+const { Kakao } = window;
 
 function LoginPage(props) {
+  const [isLogin, setIsLogin] = useState(false);
+  const loginWithKakao = () => {
+    try {
+      return new Promise((resolve, reject) => {
+        if (!Kakao) {
+          reject("Kakao 인스턴스가 존재하지 않습니다.");
+        }
+        Kakao.Auth.login({
+          success: (auth) => {
+            console.log("정상적으로 로그인되었습니다.", auth);
+            setIsLogin(true);
+            props.history.push("/");
+          },
+          fail: (err) => {
+            console.error(err);
+          },
+        });
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const logoutWithKakao = () => {
+    if (Kakao.Auth.getAccessToken()) {
+      console.log(
+        "카카오 인증 액세스 토큰이 존재합니다.",
+        Kakao.Auth.getAccessToken()
+      );
+      Kakao.Auth.logout(() => {
+        console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
+        setIsLogin(false);
+        props.history.push("/login");
+      });
+    }
+  };
+
   const dispatch = useDispatch();
 
   const [Email, setEmail] = useState("");
@@ -81,7 +120,7 @@ function LoginPage(props) {
             <div id="button-area">
               <span>
                 <Link to="/signup">
-                  <button className="signup" type="button">
+                  <button className="login" type="button">
                     Sign Up
                   </button>
                 </Link>
@@ -93,6 +132,11 @@ function LoginPage(props) {
               </span>
             </div>
           </form>
+          <hr></hr>
+          <div id="social-login-name">Social Login</div>
+          <button type="button" id="kakao-login-btn" onClick={loginWithKakao}>
+            <img src={kakaoLoginButton} alt="Kakao Social Login Button"></img>
+          </button>
         </div>
       </section>
     </div>
