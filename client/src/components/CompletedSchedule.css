@@ -1,15 +1,25 @@
-.completed_title {
+.PageHeader {
+  margin: 50px;
   display: flex;
   justify-content: space-between;
-  margin: 30px 20px 20px 70px;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 1px;
+}
+
+.Pagetitle {
+  font-size: 2em;
   color: #5f2eea;
 }
 
-.search-icon {
-  margin-right: 10px;
+.PageHeader .search {
   cursor: pointer;
+}
+
+.PageHeader .search > svg {
+  width: 1.2em;
+  height: 1.2em;
+  color: #5f2eea;
+  transition: opacity 0.3s;
+}
+
+.PageHeader .search:hover > svg {
+  opacity: 0.6;
 }
