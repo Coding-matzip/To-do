@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import kakaoLoginButton from '../../../image/kakao_login_medium_narrow.png';
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function LoginPage(props) {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-jc-c flex-ai-c height-100p">
       <section>
         <div id="main-content">
           <div id="content-name">Login</div>
@@ -78,7 +79,7 @@ function LoginPage(props) {
                 ></input>
               </div>
             </div>
-            <div id="button-area">
+            <div id="button-area" className="flex flex-ai-c flex-jc-b">
               <span>
                 <Link to="/signup">
                   <button className="login" type="button">
@@ -93,6 +94,9 @@ function LoginPage(props) {
               </span>
             </div>
           </form>
+          <hr></hr>
+          <div id="social-login-name">Social Login</div>
+          <button type="button" id="kakao-login-btn"><img src={kakaoLoginButton} alt="Kakao Social Login Button"></img></button>
         </div>
       </section>
     </div>

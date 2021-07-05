@@ -1,58 +1,94 @@
 section {
+  width: 100%;
+  height: 100%;
   text-align: center;
-  margin: 20%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-section > #main-content {
-  position: relative;
-}
+
+section > #main-content {position: relative;}
 section > #main-content > #content-name {
-  color: #5f2eea;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 34px;
-  letter-spacing: 1px;
+color: #5f2eea;
+font-family: Poppins;
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 34px;
+letter-spacing: 1px;
 }
-input {
-  background-color: #ffffff;
+section > #main-content > #social-login-name {color: gray;}
+#main-content input {
+  background-color: #EFF0F6;  
+  outline: none;
+  border: 3px solid transparent;
   border-radius: 16px;
   width: 326px;
   height: 64px;
+  padding: 10px 20px;
+  padding-top: 20px;
+  font-size: 1.125em;
+  color: #14142B;
+  font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
+  transition: background-color 0.3s;
 }
-table {
+#main-content input:focus{
+  background-color: #ffffff;
+  border: 3px solid #5f2eea;
+}
+#main-content table {
   border-collapse: separate;
   border-spacing: 0 15px;
 }
-button {
-  margin: 3% 1%;
+#main-content button {
+  /* margin: 3% 1%; */
   background-color: #ffffff;
   border-radius: 16px;
   height: 65px;
   color: #5f2eea;
-  border-color: #5f2eea;
+  border: 3px solid #5f2eea;
+  font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
-button:active {
+#main-content button:hover{
   background-color: #5f2eea;
   color: #ffffff;
 }
-button.login {
+
+#main-content button:active {
+  transform: scale(0.85);
+}
+#main-content button.login {
   width: 150px;
 }
-button.signup {
+#main-content button.signup {
   width: 150px;
 }
-.element {
+#main-content .element {
   flex-direction: column;
 }
-.label {
+#main-content .label {
   text-align: left;
+  font-size: 0.875em;
+  color: #6E7191;
 }
-.input-area {
+#main-content .label > label{
+  position: absolute;
+  top: 5px;
+  left: 23px;
+}
+
+#main-content .input-area {
   margin-top: 30px;
+  position: relative;
 }
+
 #button-area {
   margin-top: 30px;
 }
+
+button#kakao-login-btn{width: 183px; height: 45px; border-color: transparent; background-color: transparent}
+button#kakao-login-btn:hover{background-color: transparent}
+button#kakao-login-btn:active{background-color: transparent; color: #ffffff;}

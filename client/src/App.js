@@ -12,6 +12,8 @@ import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 
+import "./mediaquery.css";
+
 function App(props) {
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
