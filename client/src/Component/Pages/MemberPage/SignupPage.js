@@ -66,6 +66,7 @@ function SignupPage(props) {
                   onChange={onEmailHandler}
                   name="email"
                   id="email_field"
+                  placeholder="이메일을 형식에 맞게 입력해주세요."
                   required
                 ></input>
               </div>
@@ -81,6 +82,8 @@ function SignupPage(props) {
                   onChange={onPasswordHandler}
                   name="password"
                   id="password_field"
+                  placeholder="6자리 이상 20자리 이하의 비밀번호를 입력해주세요." 
+                  pattern="^([a-z0-9_]){6,20}$"
                   required
                 ></input>
               </div>
@@ -96,6 +99,8 @@ function SignupPage(props) {
                   onChange={onConfirmPasswordHandler}
                   name="confirmPassword"
                   id="confirm_password_field"
+                  placeholder="비밀번호를 한 번 더 입력해주세요." 
+                  pattern="^([a-z0-9_]){6,20}$"
                   required
                 ></input>
               </div>
