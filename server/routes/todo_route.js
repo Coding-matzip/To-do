@@ -13,12 +13,26 @@ router.post("/", async(req, res) => {
 
 router.get("/",async(req,res) => {
     try{
-        const todos = await TodoDB.find();
+        const todos = await TodoDB.find()
+        .limit(6);
         res.send(todos);
     }catch(err){
         res.send(err);
     }
-});
+})
+
+
+router.get("/next",async(req,res) => {
+    try{
+        const todos = await TodoDB.find()
+        .skip(6);
+        console.log(todos);
+        res.send(todos);
+    }catch(err){
+        res.send(err);
+    }
+})
+
 
 router.put("/:id", async(req,res) => {
     try{

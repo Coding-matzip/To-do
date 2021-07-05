@@ -8,11 +8,13 @@ import TodoInsert from "../LandingPage/TodoInsert";
 import TodoControl from "../LandingPage/TodoControl";
 import {
   getTodos,
+  NextgetTodos,
 } from "../../../services/TodoService";
 import axios from "axios";
 
 function LandingPage(props) {
   const [todos, setTodos] = useState({todos:[], currentTodo:""});
+  const [prevent,setprevent] = useState("");
 
   useEffect(() => {
     // axios.get("/api/hello").then((response) => console.log(response.data));
@@ -20,7 +22,11 @@ function LandingPage(props) {
     getTodos().then(function({ data }) {
       setTodos({ todos: data });
     });
-    
+
+    NextgetTodos().then(function({data}){
+      setprevent(data.length === 0 ? true : false);
+    });  // list가 6개 이상이면 control 버튼 막기
+ 
   }, []);
 
   const onClickHandler = () => {
@@ -38,7 +44,7 @@ function LandingPage(props) {
       {/* <button onClick={onClickHandler} >logout </button> */}
       <TodoInsert/>
       <TodoList todo ={todos.todos} />
-      <TodoControl/>
+      <TodoControl prevent={prevent}/>
     </TodoMain>
   );
 }

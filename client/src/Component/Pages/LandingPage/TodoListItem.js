@@ -8,20 +8,29 @@ import { MdPanoramaFishEye } from "react-icons/md";
 import cn from "classnames";
 import Modal from "./Modal";
 import {
+  NextgetTodos,
   getTodos,
   updataeTodos,
   deleteTodos,
 } from "../../../services/TodoService";
 
-const TodoListItem = ({ todoitem}) => {
+const TodoListItem = ({ todoitem,next}) => {
   const { _id, todo, completed } = todoitem;
   const [modalOpen, setModalOpen] = useState(false);
   const [todos, setTodos] = useState({todos:[], currentTodo:""});
 
   useEffect(() =>{
-    return getTodos().then(function({ data }) {
-      setTodos({ todos: data });
-    });
+    if(next){
+      return NextgetTodos().then(function({ data }) {
+        setTodos({ todos: data });
+      });
+    }
+    else{
+      return getTodos().then(function({ data }) {
+        setTodos({ todos: data });
+      });
+    }
+    
   },[]);
 
   const handleUpdate = async (currentTodo) => { //currentTask == _id

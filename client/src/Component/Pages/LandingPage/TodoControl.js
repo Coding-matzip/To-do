@@ -4,32 +4,32 @@ import { IoIosArrowDropleftCircle , IoIosArrowDroprightCircle } from "react-icon
 import "./TodoControl.css"
 import "./Modal";
 
-const TodoControl = () => {
+const TodoControl = ({completed,prevent}) => {
 
     const [pagenum,setpagenum] = useState(1);
 
-    // useEffect( () => {
-    //     setpagenum(1);
-    // });
-
     const nextclick= () => {
-        setpagenum(pagenum+1);
-        console.log(pagenum);
+        setpagenum(pagenum+1)
     }
 
     const prevclick= () => {
-        setpagenum(pagenum-1);
-        console.log(pagenum);
+        if(pagenum > 0){
+            setpagenum(pagenum-1);
+        }
     }
 
-    // <Route exact path="/prev" component={Auth(NextLandingPage, null)}></Route>
     return (
         <div className="controler">
             <div className="prev" >
-                <button onClick={prevclick}>
-                    <Link to="/">
-                        <IoIosArrowDropleftCircle size="40" color="#D9DBE9"/> 
-                    </Link>
+                <button onClick={prevent ? null : prevclick}>
+                    {prevent ? 
+                    (<IoIosArrowDropleftCircle size="40" color="#D9DBE9"/>) 
+                    :(
+                        <Link to={completed ? "/schedule" : "/" }>
+                            <IoIosArrowDropleftCircle size="40" color="#D9DBE9"/> 
+                        </Link>
+                        )
+                    }
                 </button>
                 <span>Previous</span>
             </div>
@@ -39,11 +39,16 @@ const TodoControl = () => {
             </span>
 
             <div className="next">
-                <span className="checked">Next</span> 
-                <button onClick={nextclick}>
-                    <Link to="/next">
-                        <IoIosArrowDroprightCircle className="checked" size="40" color="#D9DBE9"/>
-                    </Link>
+                <span className={prevent ? "next_span" : "next_span checked"}>Next</span> 
+                <button onClick={prevent ? null : nextclick}>
+                    {prevent ? 
+                    (<IoIosArrowDroprightCircle size="40" color="#D9DBE9"/> )
+                    :(
+                        <Link to={completed ? "/schedule/next" : "/next" }>
+                            <IoIosArrowDroprightCircle size="40" color="#5F2EEA"/> 
+                        </Link>
+                        )
+                    }
                 </button>
             </div>
 

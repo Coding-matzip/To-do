@@ -42,6 +42,10 @@
   margin-top: -11px;
 }
 
+.next .next_span {
+  color: #a1a3af;
+}
+
 .next span {
   margin-right: 10px;
   margin-top: 10px;

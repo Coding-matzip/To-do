@@ -1,22 +1,25 @@
 import "./App.css";
-import React from "react";
+import React ,{useState} from "react";
 import { Link, Route } from "react-router-dom";
 import LandingPage from "./Component/Pages/LandingPage/LandingPage";
 import LoginPage from "./Component/Pages/MemberPage/LoginPage";
 import SignupPage from "./Component/Pages/MemberPage/SignupPage";
 import SchedulePage from "./Component/Pages/Schedule/SchedulePage";
 import NextLandingPage from "./Component/Pages/LandingPage/NextLandingPage";
+import NextSchedulePage from "./Component/Pages/Schedule/NextSchedulePage";
 import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 
-function App() {
+function App(props) {
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
       array[index].classList.remove("active");
+  
     });
+
 
     event.currentTarget.classList.add("active");
   };
@@ -29,6 +32,9 @@ function App() {
         <Route exact path="/signup" component={Auth(SignupPage, null)}></Route>
         <Route exact path="/schedule"component={Auth(SchedulePage, null)}></Route>
         <Route exact path="/next" component={Auth(NextLandingPage, null)}></Route>
+        <Route exact path="/schedule/next" component={Auth(NextSchedulePage, null)}></Route>
+       
+        
       </div>
       <nav>
         <ul id="menu">

@@ -3,7 +3,10 @@ const apiUrl = "http://localhost:5000/api/todo";
 
 export function getTodos(){
     return axios.get(apiUrl);
-    
+}
+
+export function NextgetTodos(){
+    return axios.get(apiUrl+"/next");
 }
 
 export function addTodos(todo){

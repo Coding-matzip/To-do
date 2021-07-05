@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import CompletedItem from "./CompletedItem"; 
 import "./CompletedSchedule.css";
 import "../LandingPage/TodoMain.css";
@@ -8,10 +8,11 @@ import SearchModal from "./search";
 
 
 
-const CompletedList = ({todos}) => {
+const CompletedList = ({todos ,completed , nexttodos}) => {
 
   const [SearchOpen, setSearchOpen] = useState(false);
   const [SearchValue, setSearchValue] = useState("");
+  const prevent = nexttodos.length === 0 ? true : false;
 
   const OpenSearch = () => {
       setSearchOpen(true);
@@ -25,8 +26,9 @@ const CompletedList = ({todos}) => {
    const GetSearchValue = (SearchValue) => {
     setSearchValue(SearchValue);
   }
-
+  
   const todoarry = todos.todos;
+
   let searchArr = todoarry.filter(it => it.todo.includes(SearchValue));
 
     return (
@@ -58,8 +60,8 @@ const CompletedList = ({todos}) => {
             ))           
           )}    
           </div>
-        <TodoControl/>
-          <SearchModal SearchValue={GetSearchValue} open = {SearchOpen} close = {CloseSearch}></SearchModal>
+        <TodoControl completed={completed} prevent={prevent}/>
+        <SearchModal SearchValue={GetSearchValue} open = {SearchOpen} close = {CloseSearch}></SearchModal>
       {/* 자식 -> 부모로 prop 전달을 시키려 했는데 맞는지 모르겠네요.. https://technicolour.tistory.com/56 여기를 참고했습니다. */}
       </>
     ); 
