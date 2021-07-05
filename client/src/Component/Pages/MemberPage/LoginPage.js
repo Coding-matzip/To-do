@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import kakaoLoginButton from '../../../image/kakao_login_medium_narrow.png';
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -93,6 +94,9 @@ function LoginPage(props) {
               </span>
             </div>
           </form>
+          <hr></hr>
+          <div id="social-login-name">Social Login</div>
+          <button type="button" id="kakao-login-btn"><img src={kakaoLoginButton} alt="Kakao Social Login Button"></img></button>
         </div>
       </section>
     </div>
