@@ -89,7 +89,6 @@ section > #main-content > #social-login-name {color: gray;}
   margin-top: 30px;
 }
 
-button#kakao-login-btn{width: 183px; height: 45px; border-color: transparent;}
+button#kakao-login-btn{width: 183px; height: 45px; border-color: transparent; background-color: transparent}
+button#kakao-login-btn:hover{background-color: transparent}
 button#kakao-login-btn:active{background-color: transparent; color: #ffffff;}
-#kakao-login-btn {box-shadow: 5px 5px grey; border-radius: 10px;}
-#kakao-login-btn:active {box-shadow: 0px 0px grey;}
