@@ -9,6 +9,7 @@
 
 .searchCon {
   display: flex;
+  align-items: center;
 }
 
 .SearchModal.Open {
@@ -54,4 +55,6 @@
   font-size: 0.8em;
   transform: translateY(0px);
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }

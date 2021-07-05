@@ -1,4 +1,5 @@
 import "./App.css";
+
 import React from "react";
 import { Link, Route } from "react-router-dom";
 import LandingPage from "./Component/Pages/LandingPage/LandingPage";
@@ -10,6 +11,9 @@ import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
+
+import "./mediaquery.css";
+
 
 function App() {
   const buttonActive = (event) => {
