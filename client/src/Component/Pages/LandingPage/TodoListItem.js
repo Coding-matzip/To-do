@@ -33,7 +33,7 @@ const TodoListItem = ({ todoitem,next}) => {
     
   },[]);
 
-  const handleUpdate = async (currentTodo) => { //currentTask == _id
+  const handleUpdate = async (currentTodo) => {
     const originalTodos = todos.todos;
     try {
         const origntodo = [...originalTodos];

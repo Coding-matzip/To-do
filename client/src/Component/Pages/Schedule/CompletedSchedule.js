@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import CompletedItem from "./CompletedItem"; 
 import "./CompletedSchedule.css";
 import "../LandingPage/TodoMain.css";
@@ -8,16 +8,14 @@ import SearchModal from "./search";
 
 
 
-const CompletedList = ({todos ,completed , nexttodos}) => {
+const CompletedList = ({todos ,completed , nexttodos ,completednext}) => {
 
-  const [SearchOpen, setSearchOpen] = useState(false);
+  const [SearchOpen, setSearchOpen] = useState("");
   const [SearchValue, setSearchValue] = useState("");
-  const prevent = nexttodos.length === 0 ? true : false;
 
   const OpenSearch = () => {
       setSearchOpen(true);
       setSearchValue("");  
-      // searchvalue 값 초기화
   }
   const CloseSearch = () => {
     setSearchOpen(false);   
@@ -26,7 +24,6 @@ const CompletedList = ({todos ,completed , nexttodos}) => {
    const GetSearchValue = (SearchValue) => {
     setSearchValue(SearchValue);
   }
-  
   const todoarry = todos.todos;
 
   let searchArr = todoarry.filter(it => it.todo.includes(SearchValue));
@@ -41,8 +38,7 @@ const CompletedList = ({todos ,completed , nexttodos}) => {
         </div>
 
         <div className="TodoList">
-         {(SearchOpen && SearchValue !== "") ? 
-           // 검색창이 띄워지고 입력된 값이 있을 때, 검색 결과를 나열합니다.               
+         {(SearchOpen && SearchValue !== "") ?             
           (
             searchArr.map((todo) => (
               <CompletedItem
@@ -60,7 +56,12 @@ const CompletedList = ({todos ,completed , nexttodos}) => {
             ))           
           )}    
           </div>
-        <TodoControl completed={completed} prevent={prevent}/>
+        <TodoControl completed={
+          completednext ? true : false
+        } prevent={
+          completed ? nexttodos.todos.length === 0 ? true : false 
+        :
+          todos.todos.length === 0 ? true : false }/>
         <SearchModal SearchValue={GetSearchValue} open = {SearchOpen} close = {CloseSearch}></SearchModal>
       {/* 자식 -> 부모로 prop 전달을 시키려 했는데 맞는지 모르겠네요.. https://technicolour.tistory.com/56 여기를 참고했습니다. */}
       </>

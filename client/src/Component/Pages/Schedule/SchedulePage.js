@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import CompletedSchedule from "./CompletedSchedule";
 import {getTodos,NextgetTodos} from "../../../services/TodoService";
 
@@ -16,20 +15,16 @@ function SchedulePage() {
             const numcompletedtodos = completedtodos.slice(0,5);
             const nextcompletedtods = completedtodos.slice(5,completedtodos.length);
             setNextTodos({todos:nextcompletedtods});
-            // console.log("numcompletedtodos",numcompletedtodos,"nextcompletedtods",nextcompletedtods);
             setTodos({ todos: numcompletedtodos });
           }
           else{
             return setTodos({ todos: completedtodos });
           }
-          
-         
-        })}
-        )},[]);
-        console.log(nexttodos);
+          })}
+      )},[]);
     return (
         <div className ="TodoMain">
-            <CompletedSchedule todos={todos} completed={true} nexttodos={nexttodos} />
+            <CompletedSchedule todos={todos} completed={true} nexttodos={nexttodos} completednext={true} />
         </div>  
     )
 }

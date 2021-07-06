@@ -13,7 +13,6 @@ const TodoInsert = (props) => {
     setModalOpen(false);
   };
 
-  // console.log({handleChange});
   return (
     <form className="TodoInsert">
       <div onClick={openModal} className="Plus">
@@ -23,6 +22,4 @@ const TodoInsert = (props) => {
     </form>
   );
 };
-// handleChange={handleChange} handleSubmit={handleSubmit}
-//       handleUpdate={handleUpdate} handleDelete={handleDelete}
 export default TodoInsert;

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import { IoIosArrowDropleftCircle , IoIosArrowDroprightCircle } from "react-icons/io";
 import "./TodoControl.css"
 import "./Modal";
 
 const TodoControl = ({completed,prevent}) => {
-
     const [pagenum,setpagenum] = useState(1);
 
     const nextclick= () => {

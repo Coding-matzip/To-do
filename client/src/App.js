@@ -12,7 +12,7 @@ import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 
-function App(props) {
+function App() {
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {

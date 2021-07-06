@@ -6,7 +6,6 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const SearchModal = (props) => {
     const {open, close, SearchValue} = props;
-    const [modalopen,setopen]=useState(open);
     const Ref = useRef();
     const [closecontrol,setclosecontrol] = useState("");
     useEffect(() =>{
