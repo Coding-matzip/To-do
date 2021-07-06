@@ -15,8 +15,8 @@ const NextLandingPage = () => {
           return NextgetTodos().then(function(nextdata){
             const newcomletedtodos = data.concat(nextdata.data);
             const completedtodos = newcomletedtodos.filter(item => item.completed);
-            if(completedtodos.length>5){
-              const nextcompletedtods = completedtodos.slice(5,completedtodos.length);
+            if(completedtodos.length>6){
+              const nextcompletedtods = completedtodos.slice(6,completedtodos.length);
               setNextTodos({todos:nextcompletedtods});
               return setTodos({ todos: nextcompletedtods });
             }

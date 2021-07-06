@@ -11,9 +11,9 @@ function SchedulePage() {
         return NextgetTodos().then(function(nextdata){
           const newcomletedtodos = data.concat(nextdata.data);
           const completedtodos = newcomletedtodos.filter(item => item.completed);
-          if(completedtodos.length>5){
-            const numcompletedtodos = completedtodos.slice(0,5);
-            const nextcompletedtods = completedtodos.slice(5,completedtodos.length);
+          if(completedtodos.length>6){
+            const numcompletedtodos = completedtodos.slice(0,6);
+            const nextcompletedtods = completedtodos.slice(6,completedtodos.length);
             setNextTodos({todos:nextcompletedtods});
             setTodos({ todos: numcompletedtodos });
           }
