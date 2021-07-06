@@ -1,13 +1,24 @@
 .controler {
   position: absolute;
+  width: 100%;
+  padding: 0 50px;
+  left: 50%;
   bottom: 30px;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
+
+  background-color: #fff;
 }
 
 .controler button {
   border: none;
   cursor: pointer;
+  background-color: transparent;
+}
+
+.controler button:active{
+  transform: scale(0.85);
 }
 
 .prev,
@@ -19,9 +30,9 @@
   margin-left: 13px;
 }
 
-.prev button {
+/* .prev button {
   margin-top: -11px;
-}
+} */
 
 .prev span {
   margin-left: 10px;
@@ -32,15 +43,14 @@
   line-height: 18px;
   letter-spacing: 1px;
   color: #a1a3af;
-  margin-right: 210px;
 }
 
 .next {
   margin-right: 30px;
 }
-.next button {
+/* .next button {
   margin-top: -11px;
-}
+} */
 
 .next .next_span {
   color: #a1a3af;
@@ -65,7 +75,6 @@
   line-height: 27px;
   letter-spacing: 0.5em;
   color: #5f2eea;
-  margin-right: 230px;
 }
 
 .controler .checked {

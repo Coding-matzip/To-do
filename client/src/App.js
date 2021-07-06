@@ -11,6 +11,7 @@ import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
+import "./mediaquery.css";
 
 function App() {
   const buttonActive = (event) => {

@@ -32,7 +32,7 @@ const CompletedList = ({todos ,completed , nexttodos ,completednext}) => {
       <>
       <div className="PageHeader" >
           <h2 className="Pagetitle">완료된 스케줄</h2>
-            <div className="search" onClick={OpenSearch}>
+            <div className="search flex flex-ai-c" onClick={OpenSearch}>
                 <FaSearch></FaSearch>
             </div>
         </div>
