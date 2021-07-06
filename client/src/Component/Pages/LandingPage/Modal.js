@@ -6,6 +6,9 @@ import {
   getTodos,
 } from "../../../services/TodoService";
 import { AiOutlineClose } from "react-icons/ai";
+import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
+import "./DatePicker.css";
 
 const Modal = (props) => {
   const { open, close, header,id} = props;
@@ -49,8 +52,10 @@ const Modal = (props) => {
     }
   }
 
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
- return (
+  return (
     <div className={open ? "openModal modal" : "modal"}>
       {open ? (
         <div className="modal_main"  >
@@ -58,6 +63,8 @@ const Modal = (props) => {
             <AiOutlineClose size="31" color="white"/>
           </button>
           <header className="modal_header">{header}</header>
+          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+          <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
           <form className="modal_input_main" >
             <textarea className="modal_input" 
             placeholder={header === "스케줄 수정" ? "수정 할 내용을 입력하세요" : "할 일을 입력하세요"}
