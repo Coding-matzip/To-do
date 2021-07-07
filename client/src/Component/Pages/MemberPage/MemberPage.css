@@ -17,7 +17,15 @@ font-size: 32px;
 line-height: 34px;
 letter-spacing: 1px;
 }
-section > #main-content > #social-login-name {color: gray;}
+section > #main-content > #social-login-name {
+  color: gray;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  font-size: 0.7em;
+}
+
 #main-content input {
   background-color: #EFF0F6;  
   outline: none;
@@ -31,6 +39,8 @@ section > #main-content > #social-login-name {color: gray;}
   color: #14142B;
   font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
   transition: background-color 0.3s;
+
+  
 }
 #main-content input:focus{
   background-color: #ffffff;
@@ -89,6 +99,16 @@ section > #main-content > #social-login-name {color: gray;}
   margin-top: 30px;
 }
 
+/* social */
+
 button#kakao-login-btn{width: 183px; height: 45px; border-color: transparent; background-color: transparent}
 button#kakao-login-btn:hover{background-color: transparent}
 button#kakao-login-btn:active{background-color: transparent; color: #ffffff;}
+
+
+/* placeholder */
+
+
+#main-content input::placeholder{
+  font-size: 0.75em;
+}

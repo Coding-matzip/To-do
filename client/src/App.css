@@ -44,6 +44,9 @@ html {
     rgba(255, 200, 233, 0.99) 0%,
     #d2ecff 100%
   );
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body{
@@ -58,8 +61,8 @@ body{
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -78,6 +81,7 @@ body{
   margin-bottom: 70px;
   border-radius: 20px;
   position: relative;
+  transition: width 0.3s, height 0.3s;
  
   /* overflow-y: auto;
   overflow-x: hidden; */
@@ -122,6 +126,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: width 0.3s, height 0.3s;
 }
 #menu > li {
   margin: 0 50px;
