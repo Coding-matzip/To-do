@@ -61,7 +61,7 @@ const CompletedItem = ({todositem}) => {
       <div className="TodoListItem">
         <div className={cn("checkbox", { completed })} onClick={() => handleUpdate(_id)}>
           {completed ? <MdCheckCircle /> : <MdPanoramaFishEye />}
-          <div className="todo">{todo}</div>
+          <div className="todo"><span>{todo}</span></div>
         </div>
   
         <div className="option">

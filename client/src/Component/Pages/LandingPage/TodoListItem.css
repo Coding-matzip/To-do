@@ -49,6 +49,14 @@
   align-items: center;
 }
 
+.TodoListItem .checkbox .todo > span{
+  display:inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .TodoListItem .checkbox.completed svg {
   color: #5f2eea;
 }
