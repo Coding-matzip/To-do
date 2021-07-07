@@ -1,10 +1,8 @@
-const { User } = require("./models/User");
-const bodyParser = require("body-parser");
+const { User } = require("../models/User");
 const express = require("express");
 const router = express.Router();
-const config = require("./config/key");
-const cookieParser = require("cookie-parser");
-const { auth } = require("./middleware/auth");
+const { auth } = require("../middleware/auth");
+
 
 
 router.post("/api/users/signup", (req, res) => {
@@ -66,3 +64,5 @@ router.post("/api/users/signup", (req, res) => {
       return res.status(200).send({ success: true });
     });
   });
+
+  module.exports = router;
