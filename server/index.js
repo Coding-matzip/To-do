@@ -6,12 +6,8 @@ const cors = require("cors");
 const todoRouter = require("./routes/todo_route");
 const db = require("./db");
 const memberdb = require("./routes/member_route");
-const { User } = require("./models/User");
 const bodyParser = require("body-parser");
-
-const config = require("./config/key");
 const cookieParser = require("cookie-parser");
-const { auth } = require("./middleware/auth");
 
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
-
 
 
 db();
