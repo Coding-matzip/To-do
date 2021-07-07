@@ -19,8 +19,8 @@ function LoginPage(props) {
           reject("Kakao 인스턴스가 존재하지 않습니다.");
         }
         Kakao.Auth.login({
-          success: (auth) => {
-            console.log("정상적으로 로그인되었습니다.", auth);
+          success: (res) => {
+            localStorage.setItem("token", res.token);
             setIsLogin(true);
             props.history.push("/");
           },
@@ -42,6 +42,7 @@ function LoginPage(props) {
       Kakao.Auth.logout(() => {
         console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
         setIsLogin(false);
+        localStorage.clear();
         props.history.push("/login");
       });
     }
