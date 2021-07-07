@@ -6,9 +6,6 @@ import {
   getTodos,
 } from "../../../services/TodoService";
 import { AiOutlineClose } from "react-icons/ai";
-import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-import "./DatePicker.css";
 
 const Modal = (props) => {
   const { open, close, header,id} = props;
@@ -63,9 +60,27 @@ const Modal = (props) => {
             <AiOutlineClose size="31" color="white"/>
           </button>
           <header className="modal_header">{header}</header>
-          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-          <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
+          {/* <div>
+            시작 날짜
+            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+          </div>
+          <div>
+            종료 날짜
+            <DatePicker selected={endDate} onChange={date => setEndDate(date)} />
+          </div> */}
           <form className="modal_input_main" >
+            <div>
+              <div className="element label">
+                <label htmlFor="startDate_field">시작일</label>
+              </div>
+              <input type="date" value={startDate} onChange={date => setStartDate(date)} name="startDate" id="startDate_field" required></input>
+            </div>
+            <div>
+              <div className="element label">
+                <label htmlFor="startDate_field">종료일</label>
+              </div>
+              <input type="date" value={endDate} onChange={date => setEndDate(date)} name="endDate" id="endDate_field" required></input>
+            </div>
             <textarea className="modal_input" 
             placeholder={header === "스케줄 수정" ? "수정 할 내용을 입력하세요" : "할 일을 입력하세요"}
             value={todos.currentTodo} onChange={handleChange} />
