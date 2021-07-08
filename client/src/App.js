@@ -12,6 +12,8 @@ import homeIcon from "./image/icon-main.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 import "./mediaquery.css";
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 function App() {
   const buttonActive = (event) => {
@@ -23,6 +25,19 @@ function App() {
 
 
     event.currentTarget.classList.add("active");
+  };
+
+  const [isLogin, setIsLogin] = useState(false);  // 로그인을 했는지 여부
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose true");
+    setAnchorEl(null);
   };
 
   return (
@@ -40,11 +55,31 @@ function App() {
       </div>
       <nav>
         <ul id="menu">
-          <li onClick={buttonActive} key="logout">
-            <Link to="/login">
-              <img src={logoutIcon} alt="logout" />
-            </Link>
-          </li>
+          {/* 비로그인시 */}
+          {!isLogin && 
+            <li onClick={buttonActive} key="logout">
+              <Link to="/login">
+                <img src={logoutIcon} alt="logout" />
+              </Link>
+            </li>
+          }
+          {/* 로그인시 */}
+          {isLogin && 
+            <li onClick={buttonActive, handleClick} aria-controls="simple-menu" aria-haspopup="true" key="logout">
+              <img src={logoutIcon} alt="logout" />           
+            </li>
+          }
+          {/* https://material-ui.com/components/menus/ */}
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <div id="member_info_email">example@example.com</div>
+            <MenuItem onClick={handleClose}>로그아웃</MenuItem>
+          </Menu>   
           <li className="active" onClick={buttonActive} key="home">
             <Link to="/">
               <img src={homeIcon} alt="home" />
