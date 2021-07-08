@@ -101,10 +101,14 @@
   box-sizing: border-box;
   border-radius: 10px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
 }
 
 .modal_header {
-  margin-top: 20px;
+  margin-top: 15px;
   /* position: absolute;
   top: 5%;
   left: 38%; */
@@ -121,19 +125,21 @@
   /* top: 20.65%;
   bottom: 25%; */
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
   
   width: 90%;
-  height: 55%;
   border-radius: 8px;
-  background: #eff0f7;
+  /* background: #eff0f7; */
   left: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .modal_input {
   /* position: absolute; */
   width: 100%;
-  height: 100%; 
+  /* height: 100%;  */
   text-align: left;
   background: #eff0f7;
   border-radius: 8px;
@@ -146,6 +152,8 @@
   font-size: 16px;
   line-height: 28px;
   padding: 10px;
+  margin-top: 15px;
+  flex-grow: 1;
 }
 
 .modal_input:focus {
@@ -167,8 +175,8 @@
   display: block;
   width: 150px;
   height: 50px;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
+
   /* left: 50%; */
   /* transform: translateX(-50%); */
   /* left: 35%; */
@@ -191,6 +199,37 @@
   top: -40px;
   left: 94%;
 }
+/* datepicker */
+.startDate-wrap {
+  margin-right: 10px;
+}
+
+.startDate-wrap > .element.label , .endDate-wrap > .element.label{
+  font-size: 0.5em;
+  padding-left: 0.5em;
+}
+
+.startDate-wrap >  input, .endDate-wrap > input{
+  width: 180px;
+  height: 30px;
+  padding: 5px 7px;
+  background-color: #EFF0F6;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+
+.startDate-wrap >  input:focus, .endDate-wrap > input:focus{
+  border: 3px solid #5f2eea;
+  background-color: #fff;
+}
+
+.startDate-wrap >  input:required, .endDate-wrap > input:required{
+  font-size: 0.7em;
+}
+
+
+/* animation */
 
 @-webkit-keyframes modal-show {
   from {
