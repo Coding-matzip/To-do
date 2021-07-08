@@ -27,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <div style={{textAlign:'center', fontSize: '50px'}}>Todo</div>
       <div id="content-box">
         <Route exact path="/" component={Auth(LandingPage, null)}></Route>
         <Route exact path="/login" component={Auth(LoginPage, null)}></Route>
@@ -34,7 +35,7 @@ function App() {
         <Route exact path="/schedule"component={Auth(SchedulePage, null)}></Route>
         <Route exact path="/next" component={Auth(NextLandingPage, null)}></Route>
         <Route exact path="/schedule/next" component={Auth(NextSchedulePage, null)}></Route>
-       
+        {/* <Route exact path="/schedule/calendar" component={Auth(Calendar, null)}></Route> */}
         
       </div>
       <nav>
