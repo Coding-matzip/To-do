@@ -16,8 +16,6 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import PrivateRoute from "./lib/PrivateRoute";
-import PublicRoute from "./lib/PublicRoute";
 
 const { Kakao } = window;
 
