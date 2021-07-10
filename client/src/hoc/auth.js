@@ -28,7 +28,6 @@ export default function (SpecificComponent, option, adminRoute = null) {
           }
         }
       });
-      Axios.get("/api/users/auth");
     }, []);
     return <SpecificComponent />;
   }
