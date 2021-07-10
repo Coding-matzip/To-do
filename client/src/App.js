@@ -100,7 +100,7 @@ function App(props) {
         <nav>
           <ul id="menu">
             {/* 비로그인시 */}
-            {isLogin && (
+            {!isLogin && (
               <li onClick={buttonActive} key="logout">
                 <Link to="/login">
                   <img src={logoutIcon} alt="logout" />
@@ -108,7 +108,7 @@ function App(props) {
               </li>
             )}
             {/* 로그인시 */}
-            {!isLogin && (
+            {isLogin && (
               <li
                 onClick={(buttonActive, handleClick)}
                 aria-controls="simple-menu"

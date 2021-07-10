@@ -133,7 +133,6 @@ function LoginPage(props) {
               </span>
             </div>
           </form>
-          <hr></hr>
           <div id="social-login-name">Social Login</div>
           <button type="button" id="kakao-login-btn" onClick={loginWithKakao}>
             <img src={kakaoLoginButton} alt="Kakao Social Login Button"></img>
