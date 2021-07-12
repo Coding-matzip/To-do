@@ -41,7 +41,7 @@ function App(props) {
 
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const toggleLogin = (event) => {
+  const switchIsLogin = (event) => {
     setIsLogin(event);
   }
 
