@@ -16,12 +16,14 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { siteTitle } from "./Component/Config";
 
 const { Kakao } = window;
 
 function App(props) {
   useEffect(() => {
     console.log(isLogin);
+    document.title = siteTitle;
   })
   
   const buttonActive = (event) => {
