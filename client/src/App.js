@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import LandingPage from "./Component/Pages/LandingPage/LandingPage";
 import LoginPage from "./Component/Pages/MemberPage/LoginPage";
@@ -20,6 +20,10 @@ import { withRouter } from "react-router-dom";
 const { Kakao } = window;
 
 function App(props) {
+  useEffect(() => {
+    console.log(isLogin);
+  })
+  
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
@@ -34,6 +38,10 @@ function App(props) {
   const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
 
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const toggleLogin = (event) => {
+    setIsLogin(event);
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

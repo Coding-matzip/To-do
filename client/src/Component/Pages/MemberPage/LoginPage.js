@@ -12,6 +12,7 @@ const { Kakao } = window;
 
 function LoginPage(props) {
   const [isLogin, setIsLogin] = useState(false);
+
   const loginWithKakao = () => {
     try {
       return new Promise((resolve, reject) => {
@@ -22,6 +23,7 @@ function LoginPage(props) {
           success: (res) => {
             localStorage.setItem("token", res.token);
             setIsLogin(true);
+            props.toggleLogin(true);
             props.history.push("/");
           },
           fail: (err) => {
@@ -42,6 +44,7 @@ function LoginPage(props) {
       Kakao.Auth.logout(() => {
         console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
         setIsLogin(false);
+        props.toggleLogin(false);
         localStorage.clear();
         props.history.push("/login");
       });
