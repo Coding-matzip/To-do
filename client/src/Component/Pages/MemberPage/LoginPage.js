@@ -22,8 +22,6 @@ function LoginPage(props) {
         Kakao.Auth.login({
           success: (res) => {
             localStorage.setItem("token", res.token);
-            setIsLogin(true);
-            props.switchIsLogin(true);
             props.history.push("/");
           },
           fail: (err) => {
@@ -43,8 +41,6 @@ function LoginPage(props) {
       );
       Kakao.Auth.logout(() => {
         console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
-        setIsLogin(false);
-        props.switchIsLogin(false);
         localStorage.clear();
         props.history.push("/login");
       });
@@ -75,8 +71,6 @@ function LoginPage(props) {
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
         props.history.push("/");
-        setIsLogin(true);
-        props.switchIsLogin(true);
       } else {
         alert("회원 정보가 일치하지 않습니다.");
       }
