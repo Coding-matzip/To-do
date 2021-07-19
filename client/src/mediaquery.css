@@ -116,6 +116,19 @@
   .controler button svg{
       width: 30px;
   }
+
+    /* logout */
+    .MuiPaper-root{
+        width: 240px;
+        font-size: 14px;
+    }
+  
+    .MuiMenuItem-root.MuiButtonBase-root{
+        width: 130px;
+        height: 35px;
+        min-height: auto;
+    }
+
 }
 
 @media (max-width: 1200px){
@@ -134,6 +147,9 @@
   .searchCon input{
       font-size: 0.1em;
   }
+
+
+
 }
 
 @media (max-width: 1024px) and (orientation: portrait){
@@ -241,6 +257,22 @@
 .controler{
   bottom: 15px;
 }
+
+    /* logout */
+    .MuiPaper-root{
+        width: 200px;      
+        min-width: 200px;
+    }
+
+    .MuiPopover-paper{
+        min-width: none;
+    }
+  
+    .MuiMenuItem-root.MuiButtonBase-root{
+        width: 130px;
+        height: 50px;
+        
+    }
 
 }
 
@@ -471,6 +503,17 @@
       width: 280px;
       height: 432px;
   }
+  
+  /* LandingPage */
+
+  .TodoInsert{
+    height: 27px;
+  }
+
+  .TodoListItem{
+      height: 39px;
+  }
+  
 
 }
 
