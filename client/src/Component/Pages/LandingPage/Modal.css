@@ -70,9 +70,9 @@
   align-items: center;
 }
 
-.modal button {
+/* .modal button {
   margin-right: 400px;
-}
+} */
 
 .modal.openModal {
   display: -webkit-box;
@@ -126,7 +126,7 @@
   bottom: 25%; */
   margin: 0 auto;
   margin-top: 10px;
-  
+
   width: 90%;
   border-radius: 8px;
   /* background: #eff0f7; */
@@ -189,7 +189,7 @@
   color: white;
 }
 
-.openModal .modal_input_main .save:active{
+.openModal .modal_input_main .save:active {
   transform: scale(0.85);
 }
 
@@ -200,34 +200,64 @@
   left: 94%;
 }
 /* datepicker */
+
+.react-datepicker {
+  font-size: 1.3rem !important;
+}
+.react-datepicker__current-month {
+  font-size: 1.5rem !important;
+}
+.react-datepicker__header {
+  padding-top: 6px !important;
+}
+.react-datepicker__navigation {
+  top: 13px !important;
+}
+.react-datepicker__day-name,
+.react-datepicker__day {
+  margin: 0.5rem !important;
+}
+.saturday {
+  color: rgb(0, 0, 255) !important;
+}
+.sunday {
+  color: rgb(255, 0, 0) !important;
+}
+.react-datepicker__day--disabled {
+  color: #cccccc !important;
+}
+
 .startDate-wrap {
   margin-right: 10px;
 }
 
-.startDate-wrap > .element.label , .endDate-wrap > .element.label{
+.startDate-wrap > .element.label,
+.endDate-wrap > .element.label {
   font-size: 0.5em;
   padding-left: 0.5em;
 }
 
-.startDate-wrap >  input, .endDate-wrap > input{
+.startDate-wrap > input,
+.endDate-wrap > input {
   width: 180px;
   height: 30px;
   padding: 5px 7px;
-  background-color: #EFF0F6;
+  background-color: #eff0f6;
   outline: none;
   border: none;
   border-radius: 7px;
 }
 
-.startDate-wrap >  input:focus, .endDate-wrap > input:focus{
+.startDate-wrap > input:focus,
+.endDate-wrap > input:focus {
   border: 3px solid #5f2eea;
   background-color: #fff;
 }
 
-.startDate-wrap >  input:required, .endDate-wrap > input:required{
+.startDate-wrap > input:required,
+.endDate-wrap > input:required {
   font-size: 0.7em;
 }
-
 
 /* animation */
 

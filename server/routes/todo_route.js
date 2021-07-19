@@ -5,6 +5,7 @@ const router = express.Router();
 router.post("/", async(req, res) => {
     try{
         const todo = await new TodoDB(req.body).save();
+        console.log(todo);
         res.send(todo);
     }catch(err){
         res.send(err);
@@ -15,6 +16,7 @@ router.get("/",async(req,res) => {
     try{
         const todos = await TodoDB.find()
         .limit(6);
+        console.log(todos)
         res.send(todos);
     }catch(err){
         res.send(err);
@@ -26,7 +28,6 @@ router.get("/next",async(req,res) => {
     try{
         const todos = await TodoDB.find()
         .skip(6);
-        console.log(todos);
         res.send(todos);
     }catch(err){
         res.send(err);
