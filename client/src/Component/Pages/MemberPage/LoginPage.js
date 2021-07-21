@@ -11,8 +11,6 @@ import kakaoLoginButton from "../../../image/kakao_login_medium_narrow.png";
 const { Kakao } = window;
 
 function LoginPage(props) {
-  const [isLogin, setIsLogin] = useState(false);
-
   const loginWithKakao = () => {
     try {
       return new Promise((resolve, reject) => {
