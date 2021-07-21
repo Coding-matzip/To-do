@@ -1,75 +1,77 @@
-@media (max-height: 850px){
+@media (max-height: 850px) {
+
     /* nav */
     #menu {
-      width: 720px;
-      height: 70px;
-  }
+        width: 720px;
+        height: 70px;
+    }
 
-  #menu > li{
-      margin: 0 30px;
-  }
+    #menu>li {
+        margin: 0 30px;
+    }
 
-  #menu > li > a {
-      width: 35px;
-      height: 35px;
-  } 
+    #menu>li>a {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-@media (max-width: 1440px){
-  /* nav */
-  #menu {
-      width: 720px;
-      height: 70px;
-  }
+@media (max-width: 1440px) {
 
-  #menu > li{
-      margin: 0 30px;
-  }
+    /* nav */
+    #menu {
+        width: 720px;
+        height: 70px;
+    }
 
-  #menu > li > a {
-      width: 35px;
-      height: 35px;
-  }
+    #menu>li {
+        margin: 0 30px;
+    }
 
-  /* main content */
-  #content-box{
-      width: 600px;
-      height: 450px;
-      background-size: 90%;
-  }
+    #menu>li>a {
+        width: 35px;
+        height: 35px;
+    }
 
-  /* login page */
+    /* main content */
+    #content-box {
+        width: 600px;
+        height: 450px;
+        background-size: 90%;
+    }
 
-  #main-content .input-area{
-      margin-top: 20px;
-  }
+    /* login page */
 
-  #main-content input{
-      width: 300px;
-      height: 60px;
-      font-size: 0.9em;
-      padding-top: 20px;
-  }
+    #main-content .input-area {
+        margin-top: 20px;
+    }
 
-  #main-content button.login{
-      width: 145px;
-  }
+    #main-content input {
+        width: 300px;
+        height: 60px;
+        font-size: 0.9em;
+        padding-top: 20px;
+    }
 
-  #main-content button{
-      height: 60px;
-  }
+    #main-content button.login {
+        width: 145px;
+    }
 
-  #main-content .label{
-      font-size: 0.75em;
-  }
+    #main-content button {
+        height: 60px;
+    }
 
-  #main-content .label > label{
-      top: 8px;
-  }
+    #main-content .label {
+        font-size: 0.75em;
+    }
 
-  /* Landing page */
+    #main-content .label>label {
+        top: 8px;
+    }
 
-  /* .TodoInsert{
+    /* Landing page */
+
+    /* .TodoInsert{
       height: 45px;
   }
 
@@ -81,49 +83,51 @@
       font-size: 16px;
       height: 55px;
   } */
-  .TodoInsert{
-      height: 40px;
-  }
+    .TodoInsert {
+        height: 40px;
+    }
 
-  .TodoListItem{
-      height: 49px;
-      font-size: 18px;
-  }
+    .TodoListItem {
+        height: 49px;
+        font-size: 18px;
+    }
 
-  /* schedule page */
-  .PageHeader{
-      margin-bottom: 0;
-      height: 40px;
-      font-size: 14px;
-  }
-  .Pagetitle{
-      font-size: 1.8em;
-  }
+    /* schedule page */
+    .PageHeader {
+        margin-bottom: 0;
+        height: 40px;
+        font-size: 14px;
+    }
 
-  /* controller */
-  .controler{
-      bottom: 25px;
-  }
+    .Pagetitle {
+        font-size: 1.8em;
+    }
 
-  .pagenum{
-      font-size: 13px;
-  }
+    /* controller */
+    .controler {
+        bottom: 25px;
+    }
 
-  .prev span, .next span{
-      font-size: 14px;
-  }
+    .pagenum {
+        font-size: 13px;
+    }
 
-  .controler button svg{
-      width: 30px;
-  }
+    .prev span,
+    .next span {
+        font-size: 14px;
+    }
+
+    .controler button svg {
+        width: 30px;
+    }
 
     /* logout */
-    .MuiPaper-root{
+    .MuiPaper-root {
         width: 240px;
         font-size: 14px;
     }
-  
-    .MuiMenuItem-root.MuiButtonBase-root{
+
+    .MuiMenuItem-root.MuiButtonBase-root {
         width: 130px;
         height: 35px;
         min-height: auto;
@@ -131,389 +135,409 @@
 
 }
 
-@media (max-width: 1200px){
-  /* search */
-  .SearchModal.Open{
-      width: 200px;
-      height: 40px;
-      left: 90%;
-      top: -30px;
-      border-radius: 7px;
-  }
+@media (max-width: 1200px) {
 
-  .SearchModal.Open > .searchCon{
-      padding: 3px;
-  }
-  .searchCon input{
-      font-size: 0.1em;
-  }
+    /* search */
+    .SearchModal.Open {
+        width: 200px;
+        height: 40px;
+        left: 90%;
+        top: -30px;
+        border-radius: 7px;
+    }
+
+    .SearchModal.Open>.searchCon {
+        padding: 3px;
+    }
+
+    .searchCon input {
+        font-size: 0.1em;
+    }
 
 
 
 }
 
-@media (max-width: 1024px) and (orientation: portrait){
+@media (max-width: 1024px) and (orientation: portrait) {
+
     /* main content */
-    #content-box{
-      width: 600px;
-      height: 650px;
-      background-size: 137%;
-  }
+    #content-box {
+        width: 600px;
+        height: 650px;
+        background-size: 137%;
+    }
 
-  /* Landing Page */
+    /* Landing Page */
 
-  .TodoList{
-      height: 495px;
-  }
-  /* search */
-  .SearchModal.Open{
-      left: 90%;
-      top: -30px;
-  }
+    .TodoList {
+        height: 495px;
+    }
+
+    /* search */
+    .SearchModal.Open {
+        left: 90%;
+        top: -30px;
+    }
 }
 
-@media (max-width: 992px){
-  /* search */
-  .SearchModal.Open{
-      left: unset;
-      right: 0px;
-  }
+@media (max-width: 992px) {
+
+    /* search */
+    .SearchModal.Open {
+        left: unset;
+        right: 0px;
+    }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
+
     /* navigation */
-    #menu{
+    #menu {
         width: 500px;
     }
 
 
-  /* main content */
-  #content-box{
-      width: 500px;
-      height: 400px;
-      background-size: 99%;
-  }
+    /* main content */
+    #content-box {
+        width: 500px;
+        height: 400px;
+        background-size: 99%;
+    }
 
-  /* Login Page */
+    /* Login Page */
 
-  section > #main-content > #content-name{
-      font-size: 24px;
-  }
+    section>#main-content>#content-name {
+        font-size: 24px;
+    }
 
-  #main-content .input-area{
-      margin-top: 10px;
-  }
+    #main-content .input-area {
+        margin-top: 10px;
+    }
 
-  
 
-  #main-content input{
-      /* width: 270px; */
-      height: 50px;
-      padding: 10px 10px;
-      padding-top: 20px;
-  }
 
-  #main-content .label{
-      font-size: 0.6em;
-  }
+    #main-content input {
+        /* width: 270px; */
+        height: 50px;
+        padding: 10px 10px;
+        padding-top: 20px;
+    }
 
-  #button-area{
-      margin-top: 20px;
-  }
+    #main-content .label {
+        font-size: 0.6em;
+    }
 
-  section > #main-content > #social-login-name{
-      margin-top: 20px;
-      padding-top: 15px;
-  }
+    #button-area {
+        margin-top: 20px;
+    }
 
-  /* Landing Page */
-  .TodoInsert{
-      height: 35px;
-  }
+    section>#main-content>#social-login-name {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
 
-  .TodoList{
-      height: 270px;
-  }
+    /* Landing Page */
+    .TodoInsert {
+        height: 35px;
+    }
 
-  .TodoListItem{
-      height: 45px;
-  }
+    .TodoList {
+        height: 270px;
+    }
 
-  /* Schedule Page */
-  .PageHeader{
-      height: 35px;
-  }
+    .TodoListItem {
+        height: 45px;
+    }
 
-  .Pagetitle{
-      font-size: 1.5em;
-  }
+    /* Schedule Page */
+    .PageHeader {
+        height: 35px;
+    }
 
-/* modal */
-.modal.openModal{
-  padding: 0 20px;
-}
+    .Pagetitle {
+        font-size: 1.5em;
+    }
 
-/* controller */
-.controler{
-  bottom: 15px;
-}
+    /* modal */
+    .modal.openModal {
+        padding: 0 20px;
+    }
+
+    /* controller */
+    .controler {
+        bottom: 15px;
+    }
 
     /* logout */
-    .MuiPaper-root{
-        width: 200px;      
+    .MuiPaper-root {
+        width: 200px;
         min-width: 200px;
     }
 
-    .MuiPopover-paper{
+    .MuiPopover-paper {
         min-width: none;
     }
-  
-    .MuiMenuItem-root.MuiButtonBase-root{
+
+    .MuiMenuItem-root.MuiButtonBase-root {
         width: 130px;
         height: 50px;
-        
+
+    }
+
+    /* Calendar */
+    .App .control {
+        font-size: 12px !important;
     }
 
 }
 
-@media (max-width: 500px){
-        /* nav */
-        #menu {
-          width: 100%;
-          height: 50px;
-      }
-  
-      #menu > li{
-          margin: 0 20px;
-      }
-  
-      #menu > li > a {
-          width: 30px;
-          height: 30px;
-      } 
+@media (max-width: 500px) {
 
-      /* main content */
-      #content-box{
-          width: 350px;
-          height: 432px;
-          background-size: 150%;
-      }
+    /* nav */
+    #menu {
+        width: 100%;
+        height: 50px;
+    }
 
-      #content-box::before{
-          bottom: -5px;
-      }
+    #menu>li {
+        margin: 0 20px;
+    }
 
-      #content-box::after{
-          bottom: -10px;
-      }
+    #menu>li>a {
+        width: 30px;
+        height: 30px;
+    }
 
-      #main-content .input-area{
-          margin-top: 15px;
-      }
+    /* main content */
+    #content-box {
+        width: 350px;
+        height: 432px;
+        background-size: 150%;
+    }
 
-      #main-content input{
-          height: 50px;
-      }
+    #content-box::before {
+        bottom: -5px;
+    }
 
-      /* Login Page */
-      section > #main-content > #content-name{
-          font-size: 20px;
-      }
+    #content-box::after {
+        bottom: -10px;
+    }
 
-      #button-area{
-          margin-top: 17px;
-      }
+    #main-content .input-area {
+        margin-top: 15px;
+    }
 
-      #main-content button{
-          height: 40px;
-          border-radius: 12px;
-      }
+    #main-content input {
+        height: 50px;
+    }
 
-      #main-content button.login{
-          width: 120px;
-      }
+    /* Login Page */
+    section>#main-content>#content-name {
+        font-size: 20px;
+    }
 
-      #main-content button#kakao-login-btn{
-          width: auto;
-          height: auto;
-      }
+    #button-area {
+        margin-top: 17px;
+    }
 
-      #main-content button#kakao-login-btn img{
-          width: 150px;
-          height: auto;
-      }
+    #main-content button {
+        height: 40px;
+        border-radius: 12px;
+    }
 
-      #main-content button.signup{
-          width: 120px;
-      }
+    #main-content button.login {
+        width: 120px;
+    }
 
+    #main-content button#kakao-login-btn {
+        width: auto;
+        height: auto;
+    }
 
-      #main-content input{
+    #main-content button#kakao-login-btn img {
+        width: 150px;
+        height: auto;
+    }
 
-          width: 250px;
-          padding: 10px 20px;
-          padding-top: 20px;
-      }
-
-      #main-content .label{
-          font-size: 0.7em;
-      }
-
-      section > #main-content > #social-login-name{
-          margin-top: 20px;
-      }
-
-      /* Landing Page */
-      .TodoInsert{
-          height: 37px;
-      }
-
-      .Plus{
-          font-size: 1.3em;
-      }
-
-      .TodoList{
-          height: 288px;
-      }
-
-      .TodoListItem{
-          height: 48px;
-      }
-
-      .situation .checkbox svg{
-          width: 0.5em;
-          height: 0.5em;
-      }
-
-      .checkbox > span{
-          font-size: 0.6em;
-      }
-
-      .checkbox > .todo{
-          margin-left: 15px;
-          font-size: 13px;
-      }
-
-      /* schedule page */
-      .PageHeader{
-          height: 37px;
-          
-      }
-
-      .Pagetitle{
-          font-size: 1.2em;
-      }
-
-      .PageHeader .search > svg{
-          width: 0.9em;
-          height: 0.9em;
-      }
-
-      /* Datepicker */
-      .Date-wrap{
-          justify-content: space-between;
-          width: 85%;
-          margin: 0 auto;
-      }
+    #main-content button.signup {
+        width: 120px;
+    }
 
 
-      .startDate-wrap, .endDate-wrap{
-          width: 45%;
-          margin: 0 5px;
-      }
+    #main-content input {
 
-      .startDate-wrap >  input, .endDate-wrap > input{
+        width: 250px;
+        padding: 10px 20px;
+        padding-top: 20px;
+    }
+
+    #main-content .label {
+        font-size: 0.7em;
+    }
+
+    section>#main-content>#social-login-name {
+        margin-top: 20px;
+    }
+
+    /* Landing Page */
+    .TodoInsert {
+        height: 37px;
+    }
+
+    .Plus {
+        font-size: 1.3em;
+    }
+
+    .TodoList {
+        height: 288px;
+    }
+
+    .TodoListItem {
+        height: 48px;
+    }
+
+    .situation .checkbox svg {
+        width: 0.5em;
+        height: 0.5em;
+    }
+
+    .checkbox>span {
+        font-size: 0.6em;
+    }
+
+    .checkbox>.todo {
+        margin-left: 15px;
+        font-size: 13px;
+    }
+
+    /* schedule page */
+    .PageHeader {
+        height: 37px;
+
+    }
+
+    .Pagetitle {
+        font-size: 1.2em;
+    }
+
+    .PageHeader .search>svg {
+        width: 0.9em;
+        height: 0.9em;
+    }
+
+    /* Datepicker */
+    .Date-wrap {
+        justify-content: space-between;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+
+    .startDate-wrap,
+    .endDate-wrap {
+        width: 45%;
+        margin: 0 5px;
+    }
+
+    .startDate-wrap>input,
+    .endDate-wrap>input {
         width: 100%;
         height: 25px;
-      }
+    }
 
-      
 
-      /* controller */
-      .controler{
-          padding: 0;
-      }
 
-      .controler button  svg{
-          width: 25px;
-      }
+    /* controller */
+    .controler {
+        padding: 0;
+    }
 
-      .prev span, .next span{
-          font-size: 12px;
-      }
+    .controler button svg {
+        width: 25px;
+    }
 
-      .prev span{
-          margin-left: 5px;
-      }
+    .prev span,
+    .next span {
+        font-size: 12px;
+    }
 
-      .next span{
-          margin-right: 5px;
-      }
+    .prev span {
+        margin-left: 5px;
+    }
 
-      .pagenum{
-          font-size: 7px;
-      }
+    .next span {
+        margin-right: 5px;
+    }
 
-      /* modal */
+    .pagenum {
+        font-size: 7px;
+    }
 
-      .openModal .modal_main{
-          height: 300px;
-      }
+    /* modal */
 
-      
+    .openModal .modal_main {
+        height: 300px;
+    }
 
-      .openModal .modal_input_main .save{
-          width: 100px;
-          height: 30px;
-          margin-top: 10px;
-          font-size: 15px;
-      }
 
-  
 
-      .modal_input{
-          font-size: 13px;
-      }
+    .openModal .modal_input_main .save {
+        width: 100px;
+        height: 30px;
+        margin-top: 10px;
+        font-size: 15px;
+    }
 
-      .modal_input_main{
-          margin-top: 0px;
-      }
 
-      .modal > .modal_main > header{
+
+    .modal_input {
+        font-size: 13px;
+    }
+
+    .modal_input_main {
+        margin-top: 0px;
+    }
+
+    .modal>.modal_main>header {
         font-size: 16px;
     }
 
-      .openModal .modal_main .close{
-          left: 93%;
-          top: -32px;
-          width: 25px;
-      }
+    .openModal .modal_main .close {
+        left: 93%;
+        top: -32px;
+        width: 25px;
+    }
 
-      .openModal .modal_main .close svg{
-          width: 25px;
-          height: 25px;
-      }
-   
-      
-}
+    .openModal .modal_main .close svg {
+        width: 25px;
+        height: 25px;
+    }
 
-@media (max-width: 350px){
-  /* main content */
-  #content-box{
-      width: 280px;
-      height: 432px;
-  }
-  
-  /* LandingPage */
+    /* Calendar */    
 
-  .TodoInsert{
-    height: 27px;
-  }
-
-  .TodoListItem{
-      height: 39px;
-  }
-  
+     .App .control > button > svg{
+         width: 1.5em !important;
+     }
 
 }
 
+@media (max-width: 350px) {
+
+    /* main content */
+    #content-box {
+        width: 280px;
+        height: 432px;
+    }
+
+    /* LandingPage */
+
+    .TodoInsert {
+        height: 27px;
+    }
+
+    .TodoListItem {
+        height: 39px;
+    }
+
+
+}

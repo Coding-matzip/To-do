@@ -44,6 +44,9 @@ function App(props) {
   //     setIsLogin(false)
   //   }
   // });
+
+
+
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -125,7 +128,7 @@ function App(props) {
             {!isLogin && (
               <li onClick={buttonActive} key="logout">
                 <Link to="/login">
-                  <img src={logoutIcon} alt="logout" />
+                  <Link to="#"><img src={logoutIcon} alt="logout" /></Link>
                 </Link>
               </li>
             )}
@@ -137,7 +140,7 @@ function App(props) {
                 aria-haspopup="true"
                 key="logout"
               >
-                <img src={logoutIcon} alt="logout" />
+                 <Link to="#"><img src={logoutIcon} alt="logout" /></Link>
               </li>
             )}
             {/* https://material-ui.com/components/menus/ */}

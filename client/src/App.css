@@ -132,6 +132,11 @@ body{
 #menu > li {
   margin: 0 50px;
   transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 55px;
+  min-width: 30px;
 }
 #menu > li:hover {
   transform: scale(1.2);
@@ -170,6 +175,12 @@ body{
   transition: filter 0.3s;
   max-width: 30px;
 }
+
+/* #menu > li > img{
+  width: 65%;
+  height: auto;
+  max-width: 30px;
+} */
 
 #menu > li.active > a img {
   filter: brightness(10);

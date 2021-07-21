@@ -4,6 +4,7 @@ import "./CalanderPage.css"
 import {
     getTodos,
   } from "../../../services/TodoService";
+import { IoIosArrowDropleftCircle , IoIosArrowDroprightCircle } from "react-icons/io";
 
 const CalanderPage = () => {
     const [getMoment,setMoment] = useState(moment());
@@ -37,13 +38,13 @@ const CalanderPage = () => {
 
                 if(moment().format('YYYY-MM-DD') === days.format('YYYY-MM-DD')){
                   return(
-                      <td key={index} style={{backgroundColor:'red'}} >
-                        <span>{days.format('D')}</span>
+                      <td key={index} style={{borderColor:'#5F2EEA', borderWidth: '2px'}} >
+                        <span style={{color:'#5F2EEA', fontWeight:900}}>{days.format('D')}</span>
                       </td>
                   );
                 }else if(days.format('MM') !== today.format('MM')){
                   return(
-                      <td key={index} style={{backgroundColor:'gray'}} >
+                      <td key={index} style={{opacity:'0.3'}} >
                         <span>{days.format('D')}</span>
                       </td>
                   );
@@ -72,11 +73,11 @@ const CalanderPage = () => {
       }
 
     return (
-        <div className="App">
+        <div className="App Calendar">
             <div className="control">
-                <button onClick={()=>{ setMoment(getMoment.clone().subtract(1, 'month')) }} >이전달</button>
+                <button onClick={()=>{ setMoment(getMoment.clone().subtract(1, 'month')) }} ><IoIosArrowDropleftCircle size="40" color="#5F2EEA"/></button>
                 <span>{today.format("YYYY년 MM월")}</span>
-                <button onClick={()=>{ setMoment(getMoment.clone().add(1, 'month')) }} >다음달</button>
+                <button onClick={()=>{ setMoment(getMoment.clone().add(1, 'month')) }} ><IoIosArrowDroprightCircle size="40" color="#5F2EEA"/></button>
             </div>
             <table>
                 <tbody>
