@@ -62,8 +62,9 @@ const Modal = (props) => {
           </button>
           <header className="modal_header">{header}</header>
           <form className="modal_input_main" >
-            <div>
-              시작 날짜
+            <div className="Date-wrap flex flex-jc-c flex-ai-c">
+                      <div className="startDate-wrap">
+                      <span>시작 날짜</span>
               <DatePicker
               id="datePicker-start"
               dateFormat="yyyy/MM/dd"
@@ -76,8 +77,9 @@ const Modal = (props) => {
               minDate={new Date()}
               />
             </div>
-            <div>
-              종료 날짜
+            <div className="endDate-wrap">
+              <span>종료 날짜</span>
+            
               <DatePicker 
               id="datePicker-end"
               dateFormat="yyyy/MM/dd"
@@ -89,6 +91,9 @@ const Modal = (props) => {
               minDate={startDate}
               locale={ko}
               />
+            </div>
+    
+              
             </div>
             {/* <div className="Date-wrap flex flex-jc-c flex-ai-c">
             <div className="startDate-wrap">
