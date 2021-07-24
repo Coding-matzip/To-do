@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   /* border-bottom: 1px solid #e5e5e5; */
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .TodoListItem .option {
@@ -77,7 +77,7 @@
 
 .checkbox > .todo {
   display: flex;
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .checkbox > span {

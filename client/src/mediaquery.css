@@ -71,32 +71,34 @@
 
     /* Landing page */
 
-    /* .TodoInsert{
-      height: 45px;
+    .TodoInsert{
+      /* height: 45px; */
+      height: 39px;
   }
 
   .TodoList{
-      height: 330px;
+      height: 300px;
   }
 
-  .TodoListItem{
+  /* .TodoListItem{
       font-size: 16px;
       height: 55px;
   } */
-    .TodoInsert {
+    /* .TodoInsert {
         height: 40px;
-    }
+    } */
 
     .TodoListItem {
-        height: 49px;
-        font-size: 18px;
+        height: 50px;
+        font-size: 16px;
     }
 
     /* schedule page */
     .PageHeader {
         margin-bottom: 0;
-        height: 40px;
+        /* height: 40px; */
         font-size: 14px;
+        height: 39px;
     }
 
     .Pagetitle {
@@ -169,8 +171,20 @@
 
     /* Landing Page */
 
+    .TodoInsert{
+        height: 65px;
+    }
+
+    .PageHeader{
+        height: 65px;
+    }
+
     .TodoList {
-        height: 495px;
+        height: 450px;
+    }
+
+    .TodoListItem{
+        height: 75px;
     }
 
     /* search */
@@ -247,6 +261,11 @@
 
     .TodoListItem {
         height: 45px;
+        font-size: 14px;
+    }
+
+    .checkbox > .todo{
+        margin-left: 20px;
     }
 
     /* Schedule Page */
@@ -257,6 +276,8 @@
     .Pagetitle {
         font-size: 1.5em;
     }
+
+
 
     /* modal */
     .modal.openModal {
@@ -289,6 +310,19 @@
         font-size: 12px !important;
     }
 
+}
+
+@media (max-width: 600px){
+    /* datepicker */
+    .startDate-wrap, .endDate-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .startDate-wrap > span, .endDate-wrap > span{
+        align-self: flex-start;
+    }
 }
 
 @media (max-width: 500px) {
@@ -413,6 +447,7 @@
     /* schedule page */
     .PageHeader {
         height: 37px;
+        /* height: 28px; */
 
     }
 
@@ -428,7 +463,7 @@
     /* Datepicker */
     .Date-wrap {
         justify-content: space-between;
-        width: 85%;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -519,6 +554,17 @@
          width: 1.5em !important;
      }
 
+     /* datepicker */
+     .react-datepicker__day-name, .react-datepicker__day{
+         margin: 0.3rem !important;
+         font-size: 0.85em;
+     }
+
+     .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name{
+         width: 1.6rem !important;
+         line-height: 1.6rem !important;
+     }
+
 }
 
 @media (max-width: 350px) {
@@ -527,16 +573,36 @@
     #content-box {
         width: 280px;
         height: 432px;
+        background-size: 190%;
     }
 
     /* LandingPage */
 
     .TodoInsert {
-        height: 27px;
+        height: 38px;
+    }
+
+    .PageHeader{
+        height: 38px;
+    }
+
+    .TodoList{
+        height: 291px;
     }
 
     .TodoListItem {
-        height: 39px;
+        height: 48.5px;
+    }
+
+    /* controller */
+    .prev span, .next span{
+        font-size: 6px;
+    }
+
+    /* datepicker */
+
+    .react-datepicker__day-name, .react-datepicker__day{
+        margin: 0.2rem !important;
     }
 
 

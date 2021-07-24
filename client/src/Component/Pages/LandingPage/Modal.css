@@ -207,7 +207,13 @@
   border: 2px solid #5F2EEA !important;
   border-radius: 20px !important;
   overflow: hidden;
+  
 }
+
+.react-datepicker__month-container{
+  font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
+}
+
 .react-datepicker__current-month {
   font-size: 1.2rem !important;
   padding: 10px 0;
@@ -219,6 +225,8 @@
 .react-datepicker__navigation {
   top: 13px !important;
 }
+
+
 
 .react-datepicker__day-name{
   font-size: 0.3em;
@@ -234,6 +242,8 @@
 .sunday {
   color: rgb(255, 0, 0) !important;
 }
+
+
 .react-datepicker__day--disabled {
   color: #cccccc !important;
 }
@@ -242,12 +252,15 @@
   font-size: 0.7em;
 }
 
-.react-datepicker__day--in-selecting-range, .react-datepicker__month-text--in-selecting-range, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__year-text--in-selecting-range{
-
-}
 
 .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range{
   background-color: #5F2EEA !important;
+}
+.react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected{
+  border: 3px solid #5f2eea;
+  background-color: transparent !important;
+  color: #5f2eea !important;
+  font-weight: 700;
 }
 
 .startDate-wrap , .endDate-wrap{

@@ -135,8 +135,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 55px;
-  min-width: 30px;
+  /* max-width: 55px;
+  min-width: 30px; */
 }
 #menu > li:hover {
   transform: scale(1.2);
