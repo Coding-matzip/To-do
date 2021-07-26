@@ -17,14 +17,29 @@ import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { siteTitle } from "./Component/Config";
+import { auth } from "./_actions/user_action";
+import { useDispatch } from "react-redux";
 
 const { Kakao } = window;
 
 function App(props) {
+  // let isLogin = false;
+  const [isLogin, setIsLogin] = useState(false);
+  const dispatch = useDispatch();
   useEffect(() => {
-    console.log(isLogin);
     document.title = siteTitle;
+    console.log(isLogin);
+    getIsLogin();
   })
+
+  const getIsLogin = () => {
+    dispatch(auth()).then((response) => {
+      console.log(response);
+
+      if(response.payload.isAuth) setIsLogin(true);
+      else  setIsLogin(false);
+    });
+  }
   
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
@@ -37,13 +52,9 @@ function App(props) {
     event.currentTarget.classList.add("active");
   };
 
-  const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
+  //const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
 
   const [anchorEl, setAnchorEl] = useState(null);
-
-  const switchIsLogin = (event) => {
-    setIsLogin(event);
-  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -72,12 +83,28 @@ function App(props) {
       );
       Kakao.Auth.logout(() => {
         console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
-        setIsLogin(false);
         localStorage.clear();
         props.history.push("/login");
       });
     }
   };
+
+  const userMenuRender = !isLogin ? (
+    <li onClick={buttonActive} key="logout">
+    <Link to="/login">
+    <img src={logoutIcon} alt="logout" />
+    </Link>
+    </li>
+  ) : (
+    <li
+    onClick={(buttonActive, handleClick)}
+    aria-controls="simple-menu"
+    aria-haspopup="true"
+    key="logout"
+    >
+    <img src={logoutIcon} alt="logout" />
+    </li>   
+  )
 
   return (
     <Router>
@@ -109,25 +136,7 @@ function App(props) {
         </div>
         <nav>
           <ul id="menu">
-            {/* 비로그인시 */}
-            {!isLogin && (
-              <li onClick={buttonActive} key="logout">
-                <Link to="/login">
-                  <img src={logoutIcon} alt="logout" />
-                </Link>
-              </li>
-            )}
-            {/* 로그인시 */}
-            {isLogin && (
-              <li
-                onClick={(buttonActive, handleClick)}
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                key="logout"
-              >
-                <img src={logoutIcon} alt="logout" />
-              </li>
-            )}
+            {userMenuRender}
             {/* https://material-ui.com/components/menus/ */}
             <Menu
               id="simple-menu"

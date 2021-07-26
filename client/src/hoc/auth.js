@@ -12,7 +12,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
     const dispatch = useDispatch();
     useEffect(() => {
       dispatch(auth()).then((response) => {
-        console.log(response);
+        //console.log(response);
 
         // 로그인하지 않은 상태
         if (!response.payload.isAuth) {
