@@ -132,6 +132,11 @@ body{
 #menu > li {
   margin: 0 50px;
   transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* max-width: 55px;
+  min-width: 30px; */
 }
 #menu > li:hover {
   transform: scale(1.2);
@@ -171,9 +176,74 @@ body{
   max-width: 30px;
 }
 
+/* #menu > li > img{
+  width: 65%;
+  height: auto;
+  max-width: 30px;
+} */
+
 #menu > li.active > a img {
   filter: brightness(10);
 }
+
+/* logout */
+.MuiPaper-root{
+  width: 290px;
+  padding: 10px;
+  /* left: 50px;
+  top: unset !important;
+  bottom: 70px; */
+  font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
+}
+
+.MuiPaper-root.MuiPaper-rounded{
+  border-radius: 30px 30px 30px 0px;
+}
+
+.MuiList-root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#member_info_email{
+  margin-bottom: 10px;
+}
+
+.MuiMenuItem-root.MuiButtonBase-root{
+  width: 150px;
+  height: 50px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  background-color: #5F2EEA;
+  color: #fff;
+  margin-bottom: 10px;
+  border-radius: 25px; 
+  font-weight: 600;
+  font-family: 'Poppins', 'Noto Sans KR' , sans-serif;
+}
+
+.MuiPaper-elevation8{
+  box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.05);
+}
+
+.MuiMenuItem-root.MuiButtonBase-root:last-child{
+  margin-bottom: 0;
+}
+
+.MuiListItem-button{
+  transition: transform 0.3s, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  
+}
+
+.MuiListItem-button:hover{
+  /* color: #5F2EEA; */
+  background-color: #5F2EEA !important;
+  transform: scale(0.9);
+}
+
 
 @media (max-width: 300px) {
 

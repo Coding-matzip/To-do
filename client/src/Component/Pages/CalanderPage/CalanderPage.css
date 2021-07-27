@@ -1,0 +1,82 @@
+.App.Calendar {
+  width: 100%;
+  height: 100%;
+  /* height: 100vh;
+  width: 100vw; */
+  font-size: 1.5vh;
+  display: flex; /* display 설정해줘야 아래 flex로 해주면 direction 선택가능*/
+  flex-direction: column; /* 이건 세로순으로  태그들을 표시함 css*/
+  align-items: center; /* 이건 가로 중앙 css*/
+  justify-content: center; /* 이건 세로 중앙 css*/
+}
+
+.App .control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px 0 20px 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+.App .control > span{
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #5F2EEA;
+  margin: 0 15px;
+  min-width: 30%;
+  text-align: center;
+}
+
+.App .control > button{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.App .control > button:active{
+  transform: scale(0.85);
+}
+
+.App .control > button > svg{
+  width: 2em;
+}
+
+.App table {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.App table tbody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.App tr {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+}
+.App td {
+  display: flex;
+  border: 1px solid #E0E0E0;
+  /* width: 7vw; */
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 3px;
+}
+.App td span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 0.875em;
+  font-weight: 600;
+}

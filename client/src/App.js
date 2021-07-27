@@ -8,6 +8,7 @@ import SchedulePage from "./Component/Pages/Schedule/SchedulePage";
 import NextLandingPage from "./Component/Pages/LandingPage/NextLandingPage";
 import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
+import calanderIcon from "./image/Calandar.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
@@ -15,6 +16,7 @@ import "./mediaquery.css";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
+import CalanderPage from "./Component/Pages/CalanderPage/CalanderPage";
 import { withRouter } from "react-router-dom";
 import { siteTitle } from "./Component/Config";
 import { auth } from "./_actions/user_action";
@@ -48,12 +50,8 @@ function App(props) {
       array[index].classList.remove("active");
   
     });
-
-
     event.currentTarget.classList.add("active");
   };
-
-  //const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -69,7 +67,10 @@ function App(props) {
   const onClickHandler = () => {
     axios.get(`/api/users/logout`).then((response) => {
       if (response.data.success) {
-        props.history.push("/login");
+        props.history.push({
+          pathname : "/login",
+          state : { isLogin : "false"}
+        });
       } else {
         alert("로그아웃 실패");
       }
@@ -85,7 +86,10 @@ function App(props) {
       Kakao.Auth.logout(() => {
         console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
         localStorage.clear();
-        props.history.push("/login");
+        props.history.push({
+          pathname : "/login",
+          state : { isLogin : "false"}
+        });
       });
     }
   };
@@ -133,6 +137,11 @@ function App(props) {
               path="/next"
               component={Auth(NextLandingPage, true)}
             ></Route>
+            <Route
+              exact
+              path="/calandar"
+              component={Auth(CalanderPage, true)}
+            ></Route>
           </Switch>
         </div>
         <nav>
@@ -158,6 +167,11 @@ function App(props) {
             <li onClick={buttonActive} key="schedule">
               <Link to="/schedule">
                 <img src={scheduleIcon} alt="schedule" />
+              </Link>
+            </li>
+            <li onClick={buttonActive} key="calendar">
+              <Link to="/calandar">
+                <img src={calanderIcon} alt="calendar" />
               </Link>
             </li>
           </ul>
