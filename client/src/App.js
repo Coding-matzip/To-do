@@ -32,7 +32,7 @@ function App(props) {
     getIsLogin();
   })
 
-  const getIsLogin = () => {
+  async function getIsLogin () {
     dispatch(auth()).then((response) => {
       console.log(response);
 
@@ -42,6 +42,7 @@ function App(props) {
   }
   
   const buttonActive = (event) => {
+    getIsLogin();
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
       array[index].classList.remove("active");
