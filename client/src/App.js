@@ -25,19 +25,15 @@ import { useDispatch } from "react-redux";
 const { Kakao } = window;
 
 function App(props) {
-  // let isLogin = false;
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     document.title = siteTitle;
-    console.log(isLogin);
     getIsLogin();
   })
 
   async function getIsLogin () {
     dispatch(auth()).then((response) => {
-      console.log(response);
-
       if(response.payload.isAuth) setIsLogin(true);
       else  setIsLogin(false);
     });
@@ -60,7 +56,6 @@ function App(props) {
   };
 
   const handleClose = () => {
-    console.log("handleClose true");
     setAnchorEl(null);
   };
 
