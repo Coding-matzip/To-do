@@ -19,8 +19,6 @@ import { withRouter } from "react-router-dom";
 
 function App(props) {
   
-  //console.log(props.location.state.email);
-
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
@@ -112,7 +110,7 @@ function App(props) {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <div id="member_info_email">example@example.com</div>
+              <div id="member_info_email">{anchorEl? props.location.state.email:null}</div>
               <MenuItem onClick={onClickHandler}>Loout</MenuItem>
             </Menu>
             <li className="active" onClick={buttonActive} key="home">

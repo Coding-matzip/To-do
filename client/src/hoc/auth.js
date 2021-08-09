@@ -3,6 +3,7 @@ import Axios from "axios";
 import { useDispatch } from "react-redux";
 import { auth } from "../_actions/user_action";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function (SpecificComponent, option, adminRoute = null) {
   // null -> 아무나 출입이 가능한 페이지
   // true -> 로그인한 유저만 출입이 가능한 페이지
@@ -13,6 +14,10 @@ export default function (SpecificComponent, option, adminRoute = null) {
     useEffect(() => {
       dispatch(auth()).then((response) => {
         console.log(response);
+
+        props.history.push({
+          state:{email:response.payload.email}
+        })
 
         // 로그인하지 않은 상태
         if (!response.payload.isAuth) {
