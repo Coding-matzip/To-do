@@ -126,7 +126,7 @@ function App(props) {
               onClose={handleClose}
             >
               <div id="member_info_email">{anchorEl? props.location.state.email:null}</div>
-              <MenuItem onClick={onClickHandler}>Loout</MenuItem>
+              <MenuItem onClick={onClickHandler}>Logout</MenuItem>
             </Menu>
             <li className="active" onClick={buttonActive} key="home">
               <Link to="/">
