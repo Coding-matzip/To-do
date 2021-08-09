@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import LandingPage from "./Component/Pages/LandingPage/LandingPage";
 import LoginPage from "./Component/Pages/MemberPage/LoginPage";
@@ -8,6 +8,7 @@ import SchedulePage from "./Component/Pages/Schedule/SchedulePage";
 import NextLandingPage from "./Component/Pages/LandingPage/NextLandingPage";
 import logoutIcon from "./image/icon-logout.svg";
 import homeIcon from "./image/icon-main.svg";
+import calanderIcon from "./image/Calandar.svg";
 import scheduleIcon from "./image/icon-check-last-schedule.svg";
 import Auth from "./hoc/auth";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
@@ -15,11 +16,29 @@ import "./mediaquery.css";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
+import CalanderPage from "./Component/Pages/CalanderPage/CalanderPage";
 import { withRouter } from "react-router-dom";
+import { siteTitle } from "./Component/Config";
+import { auth } from "./_actions/user_action";
+import { useDispatch } from "react-redux";
 
 function App(props) {
+  const [isLogin, setIsLogin] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    document.title = siteTitle;
+    getIsLogin();
+  })
+
+  async function getIsLogin () {
+    dispatch(auth()).then((response) => {
+      if(response.payload.isAuth) setIsLogin(true);
+      else  setIsLogin(false);
+    });
+  }
   
   const buttonActive = (event) => {
+    getIsLogin();
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
       array[index].classList.remove("active");
@@ -28,9 +47,7 @@ function App(props) {
     event.currentTarget.classList.add("active");
   };
 
-  const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
-
-  const [anchorEl, setAnchorEl] = useState(true);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -38,20 +55,38 @@ function App(props) {
 
 
   const handleClose = () => {
-    console.log("handleClose true");
-
     setAnchorEl(null);
   };
 
   const onClickHandler = () => {
     axios.get(`/api/users/logout`).then((response) => {
       if (response.data.success) {
-        props.history.push("/login");
+        props.history.push({
+          pathname : "/login",
+          state : { isLogin : "false"}
+        });
       } else {
         alert("로그아웃 실패");
       }
     });
   };
+
+  const userMenuRender = !isLogin ? (
+    <li onClick={buttonActive} key="logout">
+    <Link to="/login">
+    <img src={logoutIcon} alt="logout" />
+    </Link>
+    </li>
+  ) : (
+    <li
+    onClick={(buttonActive, handleClick)}
+    aria-controls="simple-menu"
+    aria-haspopup="true"
+    key="logout"
+    >
+    <img src={logoutIcon} alt="logout" />
+    </li>   
+  )
 
   return (
     <Router>
@@ -79,29 +114,16 @@ function App(props) {
               path="/next"
               component={Auth(NextLandingPage, true)}
             ></Route>
+            <Route
+              exact
+              path="/calandar"
+              component={Auth(CalanderPage, true)}
+            ></Route>
           </Switch>
         </div>
         <nav>
           <ul id="menu">
-            {/* 비로그인시 */}
-            {!isLogin && (
-              <li onClick={buttonActive} key="logout">
-                <Link to="/login">
-                  <img src={logoutIcon} alt="logout" />
-                </Link>
-              </li>
-            )}
-            {/* 로그인시 */}
-            {isLogin && (
-              <li
-                onClick={(buttonActive, handleClick)}
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                key="logout"
-              >
-                <img src={logoutIcon} alt="logout" />
-              </li>
-            )}
+            {userMenuRender}
             {/* https://material-ui.com/components/menus/ */}
             <Menu
               id="simple-menu"
@@ -121,6 +143,11 @@ function App(props) {
             <li onClick={buttonActive} key="schedule">
               <Link to="/schedule">
                 <img src={scheduleIcon} alt="schedule" />
+              </Link>
+            </li>
+            <li onClick={buttonActive} key="calendar">
+              <Link to="/calandar">
+                <img src={calanderIcon} alt="calendar" />
               </Link>
             </li>
           </ul>

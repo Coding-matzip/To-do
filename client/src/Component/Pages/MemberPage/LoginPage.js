@@ -32,7 +32,10 @@ function LoginPage(props) {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
-        props.history.push("/");
+        props.history.push({
+          pathname : "/",
+          state : { isLogin : "true"}
+        });
       } else {
         alert("회원 정보가 일치하지 않습니다.");
       }
