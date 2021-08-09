@@ -17,30 +17,31 @@ import MenuItem from "@material-ui/core/MenuItem";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 
-const { Kakao } = window;
-
 function App(props) {
+  
+  //console.log(props.location.state.email);
+
   const buttonActive = (event) => {
     let menuList = document.querySelectorAll("#menu li");
     menuList.forEach((value, index, array) => {
       array[index].classList.remove("active");
   
     });
-
-
     event.currentTarget.classList.add("active");
   };
 
   const [isLogin, setIsLogin] = useState(false); // 로그인을 했는지 여부
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(true);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+
   const handleClose = () => {
     console.log("handleClose true");
+
     setAnchorEl(null);
   };
 
@@ -52,21 +53,6 @@ function App(props) {
         alert("로그아웃 실패");
       }
     });
-  };
-
-  const logoutWithKakao = () => {
-    if (Kakao.Auth.getAccessToken()) {
-      console.log(
-        "카카오 인증 액세스 토큰이 존재합니다.",
-        Kakao.Auth.getAccessToken()
-      );
-      Kakao.Auth.logout(() => {
-        console.log("로그아웃되었습니다.", Kakao.Auth.getAccessToken());
-        setIsLogin(false);
-        localStorage.clear();
-        props.history.push("/login");
-      });
-    }
   };
 
   return (
@@ -127,8 +113,7 @@ function App(props) {
               onClose={handleClose}
             >
               <div id="member_info_email">example@example.com</div>
-              <MenuItem onClick={onClickHandler}>로그아웃</MenuItem>
-              <MenuItem onClick={logoutWithKakao}>카카오 로그아웃</MenuItem>
+              <MenuItem onClick={onClickHandler}>Loout</MenuItem>
             </Menu>
             <li className="active" onClick={buttonActive} key="home">
               <Link to="/">
