@@ -14,7 +14,7 @@
 
 ## 기술 스택
 - **FrontEnd** : React
-- **BackEnd** : Node.js , Express
+- **BackEnd** : Node.js , Express , MongoDB
 
 ## 개발 기간
 - 2021.07.02 ~ 2021.09.02
